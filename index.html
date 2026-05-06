@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mis 15 Años - Abigail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Alex+Brush&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="btn-musica-toggle">||</button>
+
+    <div id="overlay">
+        <video id="video-invitacion" playsinline muted>
+            <source src="intro.mp4" type="video/mp4">
+            Tu navegador no soporta video.
+        </video>
+        
+        <div id="capa-boton" class="hidden">
+          <div class="cartelito-intro">
+        <p class="frase-brillar">Llegó mi momento de brillar...</p>
+    </div>
+            <button id="btn-ingresar">INGRESAR</button>
+        </div>
+    </div>
+
+
+    <audio id="musica" loop>
+        <source src="musica_corazon.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="hero">
+        <div class="hero-img" style="background-image: url('iconoboladisco.jpg');"></div>
+        <div class="hero-text">
+            <h2 class="titulo-xv" data-aos="fade-down">MIS XV</h2>
+            <h1 class="nombre-brittany" data-aos="zoom-in">Helena</h1>
+            <div class="fecha-container" data-aos="fade-up">
+                <span>16</span> | <span>JUNIO</span> | <span>26</span>
+            </div>
+            <div id="countdown" class="countdown-horizontal" data-aos="fade-up"></div>
+        </div>
+    </header>
+
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide"><img src="foto1.jpg"></div>
+            <div class="slide"><img src="foto2.jpg"></div>
+            <div class="slide"><img src="foto3.jpg"></div>
+            <div class="slide"><img src="foto4.png"></div>
+           
+            <div class="slide"><img src="foto1.jpg"></div>
+            <div class="slide"><img src="foto2.jpg"></div>
+        </div>
+    </div>
+
+    <section class="seccion-info with-bg">
+        <img src="iconofi.jpg" class="icon-anim" data-aos="zoom-in">
+        <h3>¿Dónde y Cuándo?</h3>
+        <div class="card" data-aos="fade-up">
+            <h4>Clahé Eventos
+            Temperley</h4>
+            <img src="evento.jpg" class="img-salon">
+            <p>16 de Junío, 2026 - 22:00 hs.</p>
+            <a href="https://maps.app.goo.gl/mCg4u9pqdVX53M9m6" target="_blank" class="btn-accion">Ver Ubicación</a>
+        </div>
+    </section>
+    
+    <section class="seccion-info">
+        <img src="iconoves.jpg" class="icon-anim" data-aos="zoom-in">
+        <h3>Dress Code</h3>
+        <p class="frase-estilo">"La elegancia es la única belleza que nunca desaparece.</p>
+        <h4 class="vestimenta-tipo">Vestimenta: Elegante</h4>
+        <p class="frase-estilo">
+        "Phohibido color Azul"</p>
+    </section>
+
+<!--
+    <section class="seccion-info">
+        <p>En compañía de mis padres, tengo el honor de invitarlos a ser parte de esta noche inolvidable:</p>
+        <div class="nombres-padres">
+            <h3 class="nombre-padre">Anastacio Chavez</h3>
+            <span class="separador">&</span>
+            <h3 class="nombre-padre">Felipa Taquichiri</h3>
+        </div>
+    </section>      -->
+
+    <section class="seccion-info with-bg">
+        <img src="iconore.jpg" class="icon-anim" data-aos="zoom-in">
+        <h3>Regalos</h3>
+        <p>Mi mejor regalo es compartir esta noche mágica con vos. Pero si nace de tu corazón hacerme un presente, te agradecería un detalle que me ayude a cumplir mis sueños.</p>
+        <button class="btn-accion" onclick="toggleRegalos()">Ver datos bancarios</button>
+        <div id="datos-banco" class="hidden">
+            <div class="card-banco">
+                <p>Alias: <strong>helenaibarra7</strong></p>
+                <p>CBU: 0000003100088352009902</p>
+                <p>Mercado Pago</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-info">
+        <img src="iconoins.jpg" class="icon-anim" data-aos="zoom-in">
+        <h3>Compartí tus fotos</h3>
+        <p>Queremos ver cada momento de esta noche mágica a través de tus ojos.</p>
+        <p class="instagram-handle"></p>
+        <a href="https://drive.google.com/drive/folders/1IP2wpEHwMFOmeWVU9beW146Ifl3PB_JE" target="_blank" class="btn-accion">Momentos Helena</a>
+    </section>
+
+    <section class="seccion-info with-bg">
+        <img src="iconomu.jpg" class="icon-anim" data-aos="zoom-in">
+        <h3>Play List</h3>
+        <p>¿Qué música no puede faltar?</p>
+        <input type="text" id="musica_input" class="input-form" placeholder="Nombre de la canción y artista">
+        <p style="font-size: 0.8rem; margin-top: 10px;">(Se guardará al enviar tu confirmación final)</p>
+    </section>
+
+    <section class="seccion-info ">
+        <img src="iconome.jpg" class="icon-anim" data-aos="zoom-in">
+        <h3>Contame</h3>
+        <p>Queremos que disfrutes al máximo. Si tienes alguna restricción alimentaria, por favor háznoslo saber:</p>
+        <select id="menu_tipo" class="input-form">
+            <option value="Estandar">Menú Estándar</option>
+            <option value="Celiaco">Menú Celíaco</option>
+            <option value="Vegetariano">Menú Vegetariano</option>
+            <option value="Diabetico">Menú Diabético</option>
+            <option value="Otro">Otro (Especificar abajo)</option>
+        </select>
+        <textarea id="menu_detalle" class="input-form" placeholder="Describe aquí tu limitación o detalle..."></textarea>
+    </section>
+
+    <section class="confirmacion with-bg">
+        <h3>Confirmar Asistencia</h3>
+        <p>Por favor, completa tus datos para organizar tu lugar.</p>
+        <div class="form-contenedor">
+            <input type="text" id="nombre" class="input-form" placeholder="Tu Nombre y Apellido" required>
+            <select id="asistencia" class="input-form">
+                <option value="si">¡Sí, ahí estaré!</option>
+                <option value="no">No podré asistir</option>
+            </select>
+            <input type="tel" id="telefono" class="input-form" placeholder="WhatsApp (Ej: 5411...)">
+            <button class="btn-confirmar" id="btn-final">ENVIAR Y NOTIFICAR</button>
+        </div>
+    </section>
+
+    <footer class="final-hero">
+        <div class="hero-img" style="background-image: url('perfil.jpg');"></div>
+        <div class="final-overlay"></div>
+        <div class="final-content" data-aos="zoom-in">
+            <h1 class="nombre-brittany">Helena</h1>
+            <p>¡Te espero!</p>
+            <br>
+            <button onclick="accesoAdmin()" style="background:none; border:none; color:rgba(255,255,255,0.2); cursor:pointer; font-size: 0.7rem;">Acceso Admin</button>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
