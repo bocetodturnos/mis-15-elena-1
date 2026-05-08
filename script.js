@@ -49,7 +49,7 @@ window.toggleRegalos = function() {
 }
 
 // --- CONTADOR ---
-const targetDate = new Date('Junio 16, 2026 22:00:00').getTime();
+const targetDate = new Date('Julio 03, 2026 22:00:00').getTime();
 setInterval(() => {
     const now = new Date().getTime();
     const diff = targetDate - now;
